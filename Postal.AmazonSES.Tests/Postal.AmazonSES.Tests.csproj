@@ -71,7 +71,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AmazonSimpleEmailServiceSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubSpec\SubSpec.cs" />
     <Compile Include="SubSpec\SubSpec.Thesis.cs" />
