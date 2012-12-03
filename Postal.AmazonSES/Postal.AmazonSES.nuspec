@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Postal.AmazonSES</id>
+    <version>0.0.1</version>
+    <authors>Gareth Williams</authors>
+    <owners>Gareth Williams</owners>
+    <projectUrl>https://github.com/gwilliams/Postal.AmazonSES</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Use Postal to send emails via Amazon SES</description>
+	  <releaseNotes>Initial release</releaseNotes>
+    <tags>Postal Amazon AmazonSES Email .net40</tags>
+    <dependencies>
+      <dependency id="AWSSDK" version="1.5.9.0" />
+      <dependency id="Postal" version="0.8.0" />
+    </dependencies>
+  </metadata>
+</package>

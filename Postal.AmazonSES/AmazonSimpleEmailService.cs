@@ -42,7 +42,7 @@ namespace Postal.AmazonSES
 
         public Task SendAsync(Email email)
         {
-            var taskCompletionSource = new TaskCompletionSource<object>();
+            var taskCompletionSource = new TaskCompletionSource<SendEmailResult>();
             using (var mailMessage = CreateMailMessage(email))
             {
                 _simpleEmailService.BeginSendEmail(CreateSendEmailRequest(mailMessage),
@@ -62,7 +62,7 @@ namespace Postal.AmazonSES
             return mailMessage;
         }
 
-        private SendEmailRequest CreateSendEmailRequest(MailMessage mailMessage)
+        private static SendEmailRequest CreateSendEmailRequest(MailMessage mailMessage)
         {
             return new SendEmailRequest
                        {
