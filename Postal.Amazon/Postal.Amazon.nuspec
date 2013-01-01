@@ -8,7 +8,7 @@
     <projectUrl>https://github.com/gwilliams/Postal.AmazonSES</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Use Postal to send emails via Amazon SES</description>
-	  <releaseNotes>Initial release</releaseNotes>
+    <releaseNotes>Initial release</releaseNotes>
     <tags>Postal Amazon AmazonSES Email .net40</tags>
     <dependencies>
       <dependency id="AWSSDK" version="1.5.9.0" />

@@ -92,7 +92,7 @@
     <Content Include="SubSpec\LICENSE.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Postal.AmazonSES\Postal.Amazon.csproj">
+    <ProjectReference Include="..\Postal.Amazon\Postal.Amazon.csproj">
       <Project>{ED564D14-3D09-4004-838C-79C96A042A20}</Project>
       <Name>Postal.Amazon</Name>
     </ProjectReference>
