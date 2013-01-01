@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postal.AmazonSES", "Postal.AmazonSES\Postal.AmazonSES.csproj", "{ED564D14-3D09-4004-838C-79C96A042A20}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postal.Amazon", "Postal.Amazon\Postal.Amazon.csproj", "{ED564D14-3D09-4004-838C-79C96A042A20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postal.AmazonSES.Tests", "Postal.AmazonSES.Tests\Postal.AmazonSES.Tests.csproj", "{3FBD0363-FA97-470B-B6A1-196EF2DB50A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postal.Amazon.Tests", "Postal.Amazon.Tests\Postal.Amazon.Tests.csproj", "{3FBD0363-FA97-470B-B6A1-196EF2DB50A4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{99DACA1F-A9AE-4972-9906-0D5A9801985D}"
 	ProjectSection(SolutionItems) = preProject

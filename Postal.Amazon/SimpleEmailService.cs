@@ -1,31 +1,33 @@
 ﻿using System.Linq;
 using System.Net.Mail;
 using System.Threading.Tasks;
+using Amazon;
+using Amazon.SimpleEmail;
 using Amazon.SimpleEmail.Model;
 
-namespace Postal.AmazonSES
+namespace Postal.Amazon
 {
-    public class AmazonSimpleEmailService : IEmailService
+    public class SimpleEmailService : IEmailService
     {
         readonly IEmailViewRenderer _emailViewRenderer;
-        readonly Amazon.SimpleEmail.AmazonSimpleEmailService _simpleEmailService;
+        readonly AmazonSimpleEmailService _simpleEmailService;
         readonly IEmailParser _emailParser;
 
-        public AmazonSimpleEmailService(IEmailViewRenderer emailViewRenderer)
+        public SimpleEmailService(IEmailViewRenderer emailViewRenderer)
         {
             _emailViewRenderer = emailViewRenderer;
-            _simpleEmailService = Amazon.AWSClientFactory.CreateAmazonSimpleEmailServiceClient();
+            _simpleEmailService = AWSClientFactory.CreateAmazonSimpleEmailServiceClient();
             _emailParser = new EmailParser(emailViewRenderer);
         }
 
-        public AmazonSimpleEmailService(IEmailViewRenderer emailViewRenderer, Amazon.SimpleEmail.AmazonSimpleEmailService amazonSimpleEmailService)
+        public SimpleEmailService(IEmailViewRenderer emailViewRenderer, AmazonSimpleEmailService amazonSimpleEmailService)
         {
             _emailViewRenderer = emailViewRenderer;
             _simpleEmailService = amazonSimpleEmailService;
             _emailParser = new EmailParser(emailViewRenderer);
         }
 
-        public AmazonSimpleEmailService(IEmailViewRenderer emailViewRenderer, IEmailParser emailParser, Amazon.SimpleEmail.AmazonSimpleEmailService amazonSimpleEmailService)
+        public SimpleEmailService(IEmailViewRenderer emailViewRenderer, IEmailParser emailParser, AmazonSimpleEmailService amazonSimpleEmailService)
         {
             _emailViewRenderer = emailViewRenderer;
             _simpleEmailService = amazonSimpleEmailService;
@@ -47,9 +49,9 @@ namespace Postal.AmazonSES
             {
                 _simpleEmailService.BeginSendEmail(CreateSendEmailRequest(mailMessage),
                     e =>
-                        {
-                            var result = _simpleEmailService.EndSendEmail(e);
-                            taskCompletionSource.SetResult(result.SendEmailResult);
+                    {
+                        var result = _simpleEmailService.EndSendEmail(e);
+                        taskCompletionSource.SetResult(result.SendEmailResult);
                     }, null);
             }
             return taskCompletionSource.Task;
